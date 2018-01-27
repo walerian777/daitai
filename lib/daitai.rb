@@ -1,4 +1,4 @@
-require "daitai/version"
+require 'daitai/version'
 
 module Daitai
   # Your code goes here...
