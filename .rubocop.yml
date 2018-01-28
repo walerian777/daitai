@@ -1,2 +1,5 @@
+Style/LambdaCall:
+  EnforcedStyle: braces
+
 Style/Documentation:
   Enabled: false
