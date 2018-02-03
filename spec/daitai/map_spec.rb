@@ -1,4 +1,4 @@
-RSpec.describe 'Daitai.map' do
+RSpec.describe Daitai::Map do
   before do
     @inc    = ->(x) { x + 1 }
     @dec    = ->(x) { x - 1 }
