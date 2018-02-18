@@ -6,7 +6,6 @@ RSpec.describe Daitai::Map do
   end
 
   it 'maps simple functions over arrays' do
-    require 'pry'
     expect(Daitai.map.(@double, [1, 2, 3])).to eql([2, 4, 6])
   end
 
