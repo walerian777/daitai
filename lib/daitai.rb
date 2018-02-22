@@ -1,4 +1,5 @@
 require 'daitai/all'
+require 'daitai/any'
 require 'daitai/compose'
 require 'daitai/filter'
 require 'daitai/map'
@@ -9,6 +10,7 @@ require 'daitai/version'
 
 module Daitai
   extend All
+  extend Any
   extend Compose
   extend Filter
   extend Map
