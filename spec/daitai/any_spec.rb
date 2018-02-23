@@ -10,4 +10,9 @@ RSpec.describe Daitai::Any do
   it 'returns false when all elements does not satisfy the predicate' do
     expect(Daitai.any.(@even, [1, 3, 5, 7])).to be(false)
   end
+
+  it 'is curried' do
+    any_even = Daitai.any.(@event)
+    expect(any_even.([1, 3, 5, 6])).to be(true)
+  end
 end
