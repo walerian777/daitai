@@ -31,8 +31,126 @@ $ gem install daitai
 ```
 
 ## Documentation
+* [all](#all-definition)
+* [any](#any-definition)
+* [compose](#compose-definition)
+* [filter](#filter-definition)
+* [map](#map-definition)
+* [pipe](#pipe-definition)
+* [reduce](#reduce-definition)
+* [sort](#sort-definition)
 
+- - -
 
+<h4 id='all-definition'>
+  <code>all :: (a -> Bool) -> [a] -> Bool</code>
+</h4>
+
+Checks if all elements of the list satisfy the predicate.
+
+```ruby
+even = ->(x) { x % 2 == 0 }
+Daitai.all.(even, [2, 4, 6, 8]) # => true
+Daitai.all.(even, [2, 4, 7, 8]) # => false
+```
+
+- - -
+
+<h4 id='any-definition'>
+  <code>any :: (a -> Bool) -> [a] -> Bool</code>
+</h4>
+
+Checks if at least one element of the list satisfies the predicate.
+
+```ruby
+even = ->(x) { x % 2 == 0 }
+Daitai.any.(even, [1, 2, 3, 5]) # => true
+Daitai.any.(even, [1, 3, 5, 7]) # => false
+```
+
+- - -
+
+<h4 id='compose-definition'>
+  <code>compose :: (b -> c) -> (a -> b) -> (a -> c)</code>
+</h4>
+
+Applies one function to the result of another to produce a new function.
+
+```ruby
+add_two = ->(x) { x + 2 }
+square  = ->(x) { x * x }
+f = Daitai.compose.(square, add_two)
+f.(10) # => 144
+```
+
+- - -
+
+<h4 id='filter-definition'>
+  <code>filter :: (a -> Bool) -> [a] -> [a]</code>
+</h4>
+
+Returns a list of all elements that satisfy the predicate.
+
+```ruby
+greater_than_two = -> (x) { x > 2 }
+Daitai.filter.(greater_than_two, [1, 2, 3, 4]) # => [3, 4]
+```
+
+- - -
+
+<h4 id='map-definition'>
+  <code>map :: (a -> b) -> [a] -> [b]</code>
+</h4>
+
+Applies the function to all elements of the list and returns a new list of the results.
+
+```ruby
+triple = ->(x) { x * 3 }
+Daitai.map.(triple, [1, 2, 3, 4]) # => [3, 6, 9, 12]
+```
+
+- - -
+
+<h4 id='pipe-definition'>
+  <code>pipe :: (a -> b) -> (b -> c) -> (a -> c)</code>
+</h4>
+
+Performs a function composition from left to right and returns a new function.
+
+```ruby
+add_two = ->(x) { x + 2 }
+square  = ->(x) { x * x }
+f = Daitai.pipe.(square, add_two)
+f.(10) # => 102
+```
+
+- - -
+
+<h4 id='reduce-definition'>
+  <code>reduce :: (a -> b -> a) -> a -> [b] -> a</code>
+</h4>
+
+Reduces the list using the function, from left to right, using the accumulator.
+
+```ruby
+sum = ->(x, y) { x + y }
+Daitai.reduce.(sum, 0, [1, 2, 3, 4]) # => 10
+```
+
+- - -
+
+<h4 id='sort-definition'>
+  <code>sort :: (a -> a -> Number) -> [a] -> [a]</code>
+</h4>
+
+Returns a sorted copy of the list according to the specified comparator function.
+
+```ruby
+diff = ->(x, y) { x - y }
+Daitai.sort.(diff, [2, 1, 4, 3]) # => [1, 2, 3, 4]
+```
+
+- - -
 
 ## Development
 
