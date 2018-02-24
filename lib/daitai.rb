@@ -1,15 +1,4 @@
-require 'daitai/all'
-require 'daitai/and'
-require 'daitai/any'
-require 'daitai/compose'
-require 'daitai/filter'
-require 'daitai/map'
-require 'daitai/not'
-require 'daitai/or'
-require 'daitai/pipe'
-require 'daitai/reduce'
-require 'daitai/sort'
-require 'daitai/version'
+Dir["#{__dir__}/daitai/*"].each { |file| require file }
 
 module Daitai
   extend All

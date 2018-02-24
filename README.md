@@ -110,7 +110,7 @@ f.(10) # => 144
 Returns a list of all elements that satisfy the predicate.
 
 ```ruby
-greater_than_two = -> (x) { x > 2 }
+greater_than_two = ->(x) { x > 2 }
 Daitai.filter.(greater_than_two, [1, 2, 3, 4]) # => [3, 4]
 ```
 
