@@ -32,10 +32,13 @@ $ gem install daitai
 
 ## Documentation
 * [all](#all-definition)
+* [and](#and-definition)
 * [any](#any-definition)
 * [compose](#compose-definition)
 * [filter](#filter-definition)
 * [map](#map-definition)
+* [not](#not-definition)
+* [or](#or-definition)
 * [pipe](#pipe-definition)
 * [reduce](#reduce-definition)
 * [sort](#sort-definition)
@@ -52,6 +55,21 @@ Checks if all elements of the list satisfy the predicate.
 even = ->(x) { x % 2 == 0 }
 Daitai.all.(even, [2, 4, 6, 8]) # => true
 Daitai.all.(even, [2, 4, 7, 8]) # => false
+```
+
+- - -
+
+<h4 id='and-definition'>
+  <code>and :: Bool -> Bool -> Bool</code>
+</h4>
+
+Boolean `and` - returns `true` if both arguments are true. Otherwise returns `false`.
+
+```ruby
+Daitai.and.(true, true)   # => true
+Daitai.and.(true, false)  # => false
+Daitai.and.(false, true)  # => false
+Daitai.and.(false, false) # => false
 ```
 
 - - -
@@ -107,6 +125,36 @@ Applies the function to all elements of the list and returns a new list of the r
 ```ruby
 triple = ->(x) { x * 3 }
 Daitai.map.(triple, [1, 2, 3, 4]) # => [3, 6, 9, 12]
+```
+
+- - -
+
+<h4 id='not-definition'>
+  <code>not :: Bool -> Bool</code>
+</h4>
+
+Boolean `not` - returns a contradiction of the argument.
+
+```ruby
+Daitai.not.(true)  # => false
+Daitai.not.(false) # => true
+Daitai.not.('λ')   # => false
+Daitai.not.(nil)   # => true
+```
+
+- - -
+
+<h4 id='or-definition'>
+  <code>or :: Bool -> Bool -> Bool</code>
+</h4>
+
+Boolean `or` - returns `true` if at least one of the arguments is true. Otherwise returs `false`.
+
+```ruby
+Daitai.or.(true, true)   # => true
+Daitai.or.(true, false)  # => true
+Daitai.or.(false, true)  # => true
+Daitai.or.(false, false) # => false
 ```
 
 - - -
