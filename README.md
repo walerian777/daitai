@@ -1,4 +1,4 @@
-# Daitai [![Build Status](https://travis-ci.org/walerian777/daitai.svg?branch=master)](https://travis-ci.org/walerian777/daitai)
+# Daitai [![Build Status](https://travis-ci.org/walerian777/daitai.svg?branch=master)](https://travis-ci.org/walerian777/daitai) [![Gem Version](https://badge.fury.io/rb/daitai.svg)](https://badge.fury.io/rb/daitai)
 
 Daitai (代替, Japanese for "alternative") is a functional library for Ruby language.
 
