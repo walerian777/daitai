@@ -31,17 +31,50 @@ $ gem install daitai
 ```
 
 ## Documentation
+* [abs](#abs-definition)
+* [add](#add-definition)
 * [all](#all-definition)
 * [and](#and-definition)
 * [any](#any-definition)
 * [compose](#compose-definition)
+* [divide](#divide-definition)
 * [filter](#filter-definition)
 * [map](#map-definition)
+* [modulo](#modulo-definition)
+* [multiply](#multiply-definition)
+* [negate](#negate-definition)
 * [not](#not-definition)
 * [or](#or-definition)
 * [pipe](#pipe-definition)
 * [reduce](#reduce-definition)
+* [signum](#signum-definition)
 * [sort](#sort-definition)
+* [subtract](#subtract-definition)
+
+- - -
+
+<h4 id='abs-definition'>
+  <code>abs :: a -> a</code>
+</h4>
+
+Returns the absolute value of an argument.
+
+```ruby
+Daitai.abs.(11) # => 11
+Daitai.abs.(-8) # => 8
+```
+
+- - -
+
+<h4 id='add-definition'>
+  <code>add :: a -> a -> a</code>
+</h4>
+
+Calculates the sum of two arguments.
+
+```ruby
+Daitai.add.(3, 4) # => 7
+```
 
 - - -
 
@@ -103,6 +136,18 @@ f.(10) # => 144
 
 - - -
 
+<h4 id='divide-definition'>
+  <code>divide :: a -> a -> a</code>
+</h4>
+
+Calculates the quotient of two arguments.
+
+```ruby
+Daitai.divide.(18, 6) # => 3
+```
+
+- - -
+
 <h4 id='filter-definition'>
   <code>filter :: (a -> Bool) -> [a] -> [a]</code>
 </h4>
@@ -125,6 +170,43 @@ Applies the function to all elements of the list and returns a new list of the r
 ```ruby
 triple = ->(x) { x * 3 }
 Daitai.map.(triple, [1, 2, 3, 4]) # => [3, 6, 9, 12]
+```
+
+- - -
+
+<h4 id='modulo-definition'>
+  <code>modulo :: a -> a -> a</code>
+</h4>
+
+Calculates the remainder after division of two arguments.
+
+```ruby
+Daitai.modulo.(18, 7) # => 4
+```
+
+- - -
+
+<h4 id='multiply-definition'>
+  <code>multiply :: a -> a -> a</code>
+</h4>
+
+Calculates the product of two arguments.
+
+```ruby
+Daitai.multiply.(4, 3) # => 12
+```
+
+- - -
+
+<h4 id='negate-definition'>
+  <code>negate :: Bool -> Bool</code>
+</h4>
+
+Unary negation - returns a negated value of the argument.
+
+```ruby
+Daitai.negate.(11) # => -11
+Daitai.negate.(-8) # => 8
 ```
 
 - - -
@@ -187,6 +269,20 @@ Daitai.reduce.(sum, 0, [1, 2, 3, 4]) # => 10
 
 - - -
 
+<h4 id='signum-definition'>
+  <code>signum :: a -> a</code>
+</h4>
+
+Extracts the sign of an argument.
+
+```ruby
+Daitai.signum.(11) # => 1
+Daitai.signum.(0)  # => 0
+Daitai.signum.(-8) # => -1
+```
+
+- - -
+
 <h4 id='sort-definition'>
   <code>sort :: (a -> a -> Number) -> [a] -> [a]</code>
 </h4>
@@ -196,6 +292,18 @@ Returns a sorted copy of the list according to the specified comparator function
 ```ruby
 diff = ->(x, y) { x - y }
 Daitai.sort.(diff, [2, 1, 4, 3]) # => [1, 2, 3, 4]
+```
+
+- - -
+
+<h4 id='subtract-definition'>
+  <code>subtract :: a -> a -> a</code>
+</h4>
+
+Calculates the differce of two arguments.
+
+```ruby
+Daitai.subtract.(9, 4) # => 5
 ```
 
 - - -
