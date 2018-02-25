@@ -10,6 +10,7 @@ module Daitai
   extend Divide
   extend Filter
   extend Map
+  extend Modulo
   extend Multiply
   extend Negate
   extend Not
