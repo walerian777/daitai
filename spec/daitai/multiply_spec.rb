@@ -10,8 +10,8 @@ RSpec.describe Daitai::Multiply do
 
   describe 'has properties of multiplication' do
     it 'is commutative' do
-      a = rand
-      b = rand
+      a = 2
+      b = 3
 
       left  = Daitai.multiply.(a, b)
       right = Daitai.multiply.(b, a)
@@ -20,9 +20,9 @@ RSpec.describe Daitai::Multiply do
     end
 
     it 'is associative' do
-      a = rand
-      b = rand
-      c = rand
+      a = 2
+      b = 3
+      c = 4
 
       left  = Daitai.multiply.(Daitai.multiply.(a, b), c)
       right = Daitai.multiply.(a, Daitai.multiply.(b, c))
@@ -32,7 +32,7 @@ RSpec.describe Daitai::Multiply do
 
     it 'has the identity element' do
       IDENTITY_ELEMENT = 1
-      a = rand
+      a = 2
 
       left  = Daitai.multiply.(a, IDENTITY_ELEMENT)
       right = Daitai.multiply.(IDENTITY_ELEMENT, a)
@@ -43,9 +43,9 @@ RSpec.describe Daitai::Multiply do
     end
 
     it 'is distributive' do
-      a = rand
-      b = rand
-      c = rand
+      a = 2
+      b = 3
+      c = 4
 
       left  = Daitai.multiply.(a, Daitai.add.(b, c))
       right = Daitai.add.(Daitai.multiply.(a, b), Daitai.multiply.(a, c))
@@ -54,8 +54,8 @@ RSpec.describe Daitai::Multiply do
     end
 
     it 'has property of zero' do
-      ZERO = 0.0
-      a = rand
+      ZERO = 0
+      a = 2
 
       expect(Daitai.multiply.(a, ZERO)).to eql(ZERO)
     end

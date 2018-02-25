@@ -10,8 +10,8 @@ RSpec.describe Daitai::Add do
 
   describe 'has properties of addition' do
     it 'is commutative' do
-      a = rand
-      b = rand
+      a = 2
+      b = 3
 
       left  = Daitai.add.(a, b)
       right = Daitai.add.(b, a)
@@ -20,9 +20,9 @@ RSpec.describe Daitai::Add do
     end
 
     it 'is associative' do
-      a = rand
-      b = rand
-      c = rand
+      a = 2
+      b = 3
+      c = 4
 
       left  = Daitai.add.(Daitai.add.(a, b), c)
       right = Daitai.add.(a, Daitai.add.(b, c))
@@ -32,7 +32,7 @@ RSpec.describe Daitai::Add do
 
     it 'has the identity element' do
       IDENTITY_ELEMENT = 0
-      a = rand
+      a = 2
 
       left  = Daitai.add.(a, IDENTITY_ELEMENT)
       right = Daitai.add.(IDENTITY_ELEMENT, a)
