@@ -199,7 +199,7 @@ Daitai.multiply.(4, 3) # => 12
 - - -
 
 <h4 id='negate-definition'>
-  <code>negate :: Bool -> Bool</code>
+  <code>negate :: a -> a</code>
 </h4>
 
 Unary negation - returns a negated value of the argument.
@@ -284,7 +284,7 @@ Daitai.signum.(-8) # => -1
 - - -
 
 <h4 id='sort-definition'>
-  <code>sort :: (a -> a -> Number) -> [a] -> [a]</code>
+  <code>sort :: (a -> a -> Numeric) -> [a] -> [a]</code>
 </h4>
 
 Returns a sorted copy of the list according to the specified comparator function.
