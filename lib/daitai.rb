@@ -20,4 +20,5 @@ module Daitai
   extend Signum
   extend Sort
   extend Subtract
+  extend Sum
 end

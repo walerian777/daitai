@@ -50,6 +50,7 @@ $ gem install daitai
 * [signum](#signum-definition)
 * [sort](#sort-definition)
 * [subtract](#subtract-definition)
+* [sum](#sum-definition)
 
 - - -
 
@@ -304,6 +305,18 @@ Calculates the differce of two arguments.
 
 ```ruby
 Daitai.subtract.(9, 4) # => 5
+```
+
+- - -
+
+<h4 id='sum-definition'>
+  <code>sum :: [a] -> a</code>
+</h4>
+
+Calculates the sum of all elements of a list.
+
+```ruby
+Daitai.sum.([1, 2, 3, 4]) # => 10
 ```
 
 - - -
