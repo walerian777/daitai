@@ -46,6 +46,7 @@ $ gem install daitai
 * [not](#not-definition)
 * [or](#or-definition)
 * [pipe](#pipe-definition)
+* [product](#product-definition)
 * [reduce](#reduce-definition)
 * [signum](#signum-definition)
 * [sort](#sort-definition)
@@ -253,6 +254,18 @@ add_two = ->(x) { x + 2 }
 square  = ->(x) { x * x }
 f = Daitai.pipe.(square, add_two)
 f.(10) # => 102
+```
+
+- - -
+
+<h4 id='product-definition'>
+  <code>product :: [a] -> a</code>
+</h4>
+
+Calculates the product of all elements of a list.
+
+```ruby
+Daitai.sum.([1, 2, 3, 4]) # => 24
 ```
 
 - - -

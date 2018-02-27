@@ -16,6 +16,7 @@ module Daitai
   extend Not
   extend Or
   extend Pipe
+  extend Product
   extend Reduce
   extend Signum
   extend Sort
