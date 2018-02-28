@@ -159,6 +159,9 @@ Returns a list of all elements that satisfy the predicate.
 ```ruby
 greater_than_two = ->(x) { x > 2 }
 Daitai.filter.(greater_than_two, [1, 2, 3, 4]) # => [3, 4]
+
+only_even = Daitai.filter.(->(x) { x % 2 == 0 })
+only_even.([1, 2, 3, 4]) # => [2, 4]
 ```
 
 - - -
@@ -172,6 +175,9 @@ Applies the function to all elements of the list and returns a new list of the r
 ```ruby
 triple = ->(x) { x * 3 }
 Daitai.map.(triple, [1, 2, 3, 4]) # => [3, 6, 9, 12]
+
+increment = Daitai.map.(->(x) { x + 1 })
+increment.([1, 2, 3, 4]) # => [2, 3, 4, 5]
 ```
 
 - - -
@@ -277,8 +283,11 @@ Daitai.sum.([1, 2, 3, 4]) # => 24
 Reduces the list using the function, from left to right, using the accumulator.
 
 ```ruby
-sum = ->(x, y) { x + y }
-Daitai.reduce.(sum, 0, [1, 2, 3, 4]) # => 10
+add = ->(x, y) { x + y }
+Daitai.reduce.(add, 0, [1, 2, 3, 4]) # => 10
+
+concat = Daitai.reduce.(add, "")
+concat.(%w[l a m b d a]) # => "lambda"
 ```
 
 - - -
@@ -306,6 +315,9 @@ Returns a sorted copy of the list according to the specified comparator function
 ```ruby
 diff = ->(x, y) { x - y }
 Daitai.sort.(diff, [2, 1, 4, 3]) # => [1, 2, 3, 4]
+
+sort_by_length = Daitai.sort.(->(x, y) { x.length - y.length })
+sort_by_length.(%w[haskell ruby elixir]) # => ["ruby", "elixir", "haskell"]
 ```
 
 - - -
