@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Dir["#{__dir__}/daitai/*"].each { |file| require file }
 
 module Daitai

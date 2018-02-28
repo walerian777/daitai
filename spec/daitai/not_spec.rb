@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe Daitai::Not do
   it 'returns true for false' do
     expect(Daitai.not.(false)).to be(true)

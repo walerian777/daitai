@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe Daitai::Any do
   before do
     @even = ->(x) { x % 2 == 0 } # rubocop:disable Style/EvenOdd

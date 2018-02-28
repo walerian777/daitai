@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe Daitai::Map do
   before do
     @inc    = ->(x) { x + 1 }

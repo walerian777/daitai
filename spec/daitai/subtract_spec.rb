@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe Daitai::Subtract do
   it 'returns a difference of two arguments' do
     expect(Daitai.subtract.(5, 3)).to be(2)

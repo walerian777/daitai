@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe Daitai::Sort do
   before do
     @diff = ->(x, y) { x - y }

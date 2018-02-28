@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe Daitai::Multiply do
   it 'returns a product of two arguments' do
     expect(Daitai.multiply.(2, 3)).to be(6)

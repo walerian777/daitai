@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe Daitai::Pipe do
   before do
     @to_int   = ->(x) { x.to_i }

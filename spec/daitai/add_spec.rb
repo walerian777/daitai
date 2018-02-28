@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe Daitai::Add do
   it 'returns a sum of two arguments' do
     expect(Daitai.add.(2, 3)).to be(5)

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Daitai
   module Pipe
     def pipe

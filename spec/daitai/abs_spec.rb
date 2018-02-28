@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe Daitai::Abs do
   it 'returns the absolute value of a positive number' do
     expect(Daitai.abs.(2)).to be(2)

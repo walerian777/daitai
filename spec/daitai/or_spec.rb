@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe Daitai::Or do
   it 'returns true when at least one of the arguments is true' do
     expect(Daitai.or.(true, false)).to be(true)

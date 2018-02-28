@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe Daitai::Reduce do
   before do
     @add      = ->(x, y) { x + y }

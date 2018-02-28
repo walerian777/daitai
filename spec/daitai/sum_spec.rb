@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe Daitai::Sum do
   it 'returns the sum of a list' do
     expect(Daitai.sum.([1, 2, 3, 4])).to be(10)
