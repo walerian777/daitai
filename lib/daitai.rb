@@ -11,6 +11,9 @@ module Daitai
   extend Compose
   extend Divide
   extend Filter
+  extend Head
+  extend Init
+  extend Last
   extend Map
   extend Modulo
   extend Multiply
@@ -24,4 +27,5 @@ module Daitai
   extend Sort
   extend Subtract
   extend Sum
+  extend Tail
 end
