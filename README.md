@@ -39,6 +39,9 @@ $ gem install daitai
 * [compose](#compose-definition)
 * [divide](#divide-definition)
 * [filter](#filter-definition)
+* [head](#head-definition)
+* [init](#init-definition)
+* [last](#last-definition)
 * [map](#map-definition)
 * [modulo](#modulo-definition)
 * [multiply](#multiply-definition)
@@ -52,6 +55,7 @@ $ gem install daitai
 * [sort](#sort-definition)
 * [subtract](#subtract-definition)
 * [sum](#sum-definition)
+* [tail](#tail-definition)
 
 - - -
 
@@ -162,6 +166,45 @@ Daitai.filter.(greater_than_two, [1, 2, 3, 4]) # => [3, 4]
 
 only_even = Daitai.filter.(->(x) { x % 2 == 0 })
 only_even.([1, 2, 3, 4]) # => [2, 4]
+```
+
+- - -
+
+<h4 id='head-definition'>
+  <code>head :: [a] -> a</code>
+</h4>
+
+Returns the first element of a list.
+
+```ruby
+Daitai.head.([1, 2, 3, 4]) # => 1
+Daitai.head.("Ruby") # => "R"
+```
+
+- - -
+
+<h4 id='init-definition'>
+  <code>init :: [a] -> [a]</code>
+</h4>
+
+Returns all the elements of a list except the last one.
+
+```ruby
+Daitai.init.([1, 2, 3, 4]) # => [1, 2, 3]
+Daitai.init.("Ruby") # => "Rub"
+```
+
+- - -
+
+<h4 id='last-definition'>
+  <code>last :: [a] -> a</code>
+</h4>
+
+Returns the last element of a list.
+
+```ruby
+Daitai.head.([1, 2, 3, 4]) # => 4
+Daitai.head.("Ruby") # => "y"
 ```
 
 - - -
@@ -342,6 +385,19 @@ Calculates the sum of all elements of a list.
 
 ```ruby
 Daitai.sum.([1, 2, 3, 4]) # => 10
+```
+
+- - -
+
+<h4 id='tail-definition'>
+  <code>tail :: [a] -> [a]</code>
+</h4>
+
+Returns all the elements of a list except the first one.
+
+```ruby
+Daitai.tail.([1, 2, 3, 4]) # => [2, 3, 4]
+Daitai.tail.("Ruby") # => "uby"
 ```
 
 - - -
