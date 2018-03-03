@@ -9,6 +9,7 @@ module Daitai
   extend And
   extend Any
   extend Compose
+  extend Concat
   extend Divide
   extend Filter
   extend Head
@@ -23,6 +24,7 @@ module Daitai
   extend Pipe
   extend Product
   extend Reduce
+  extend Reverse
   extend Signum
   extend Sort
   extend Subtract
