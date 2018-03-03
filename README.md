@@ -37,6 +37,7 @@ $ gem install daitai
 * [and](#and-definition)
 * [any](#any-definition)
 * [compose](#compose-definition)
+* [concat](#concat-definition)
 * [divide](#divide-definition)
 * [filter](#filter-definition)
 * [head](#head-definition)
@@ -51,6 +52,7 @@ $ gem install daitai
 * [pipe](#pipe-definition)
 * [product](#product-definition)
 * [reduce](#reduce-definition)
+* [reverse](#reverse-definition)
 * [signum](#signum-definition)
 * [sort](#sort-definition)
 * [subtract](#subtract-definition)
@@ -138,6 +140,19 @@ add_two = ->(x) { x + 2 }
 square  = ->(x) { x * x }
 f = Daitai.compose.(square, add_two)
 f.(10) # => 144
+```
+
+- - -
+
+<h4 id='concat-definition'>
+  <code>concat :: [a] -> [a] -> [a]</code>
+</h4>
+
+Returns the result of concatenating provided lists or strings.
+
+```ruby
+Daitai.concat.([1, 2], [3, 4]) # => [1, 2, 3, 4]
+Daitai.concat.("Szcz", "ecin") # => "Szczecin"
 ```
 
 - - -
@@ -331,6 +346,19 @@ Daitai.reduce.(add, 0, [1, 2, 3, 4]) # => 10
 
 concat = Daitai.reduce.(add, "")
 concat.(%w[l a m b d a]) # => "lambda"
+```
+
+- - -
+
+<h4 id='reverse-definition'>
+  <code>reverse :: [a] -> [a]</code>
+</h4>
+
+Returns the elements of a list in reverse order.
+
+```ruby
+Daitai.reverse.([0, 5, 10, 15]) # => [15, 10, 5, 0]
+Daitai.reverse.("raw desserts") # => "stressed war"
 ```
 
 - - -
