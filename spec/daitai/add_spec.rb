@@ -2,12 +2,12 @@
 
 RSpec.describe Daitai::Add do
   it 'returns a sum of two arguments' do
-    expect(Daitai.add.(2, 3)).to be(5)
+    expect(Daitai.add.(2, 3)).to eql(5)
   end
 
   it 'is curried' do
     increment = Daitai.add.(1)
-    expect(increment.(6)).to be(7)
+    expect(increment.(6)).to eql(7)
   end
 
   describe 'has properties of addition' do

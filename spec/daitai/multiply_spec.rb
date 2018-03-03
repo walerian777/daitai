@@ -2,12 +2,12 @@
 
 RSpec.describe Daitai::Multiply do
   it 'returns a product of two arguments' do
-    expect(Daitai.multiply.(2, 3)).to be(6)
+    expect(Daitai.multiply.(2, 3)).to eql(6)
   end
 
   it 'is curried' do
     triple = Daitai.multiply.(3)
-    expect(triple.(6)).to be(18)
+    expect(triple.(6)).to eql(18)
   end
 
   describe 'has properties of multiplication' do
