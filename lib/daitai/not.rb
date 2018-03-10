@@ -3,9 +3,7 @@
 module Daitai
   module Not
     def not
-      lambda do |a|
-        !a
-      end
+      ->(a) { !a }
     end
   end
 end
