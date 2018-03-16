@@ -43,6 +43,7 @@ $ gem install daitai
 * [head](#head-definition)
 * [init](#init-definition)
 * [last](#last-definition)
+* [length](#length-definition)
 * [map](#map-definition)
 * [modulo](#modulo-definition)
 * [multiply](#multiply-definition)
@@ -218,8 +219,21 @@ Daitai.init.("Ruby") # => "Rub"
 Returns the last element of a list.
 
 ```ruby
-Daitai.head.([1, 2, 3, 4]) # => 4
-Daitai.head.("Ruby") # => "y"
+Daitai.last.([1, 2, 3, 4]) # => 4
+Daitai.last.("Ruby") # => "y"
+```
+
+- - -
+
+<h4 id='length-definition'>
+  <code>length :: [a] -> Integer</code>
+</h4>
+
+Returns the length of a list.
+
+```ruby
+Daitai.length.([1, 2, 3, 4]) # => 4
+Daitai.length.("Ruby") # => 4
 ```
 
 - - -

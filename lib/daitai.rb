@@ -15,6 +15,7 @@ module Daitai
   extend Head
   extend Init
   extend Last
+  extend Length
   extend Map
   extend Modulo
   extend Multiply
