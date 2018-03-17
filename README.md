@@ -45,6 +45,8 @@ $ gem install daitai
 * [last](#last-definition)
 * [length](#length-definition)
 * [map](#map-definition)
+* [max](#max-definition)
+* [min](#min-definition)
 * [modulo](#modulo-definition)
 * [multiply](#multiply-definition)
 * [negate](#negate-definition)
@@ -250,6 +252,38 @@ Daitai.map.(triple, [1, 2, 3, 4]) # => [3, 6, 9, 12]
 
 increment = Daitai.map.(->(x) { x + 1 })
 increment.([1, 2, 3, 4]) # => [2, 3, 4, 5]
+```
+
+- - -
+
+<h4 id='max-definition'>
+  <code>max :: a -> a -> a</code>
+</h4>
+
+Returns the larger of two arguments.
+
+```ruby
+Daitai.max.(6, 7) # => 7
+
+non_negative = Daitai.max.(0)
+non_negative.(-7) # => 0
+non_negative.(11) # => 11
+```
+
+- - -
+
+<h4 id='min-definition'>
+  <code>min :: a -> a -> a</code>
+</h4>
+
+Returns the smaller of two arguments.
+
+```ruby
+Daitai.min.(6, 7) # => 6
+
+non_positive = Daitai.min.(0)
+non_positive.(-7) # => -7
+non_positive.(11) # => 0
 ```
 
 - - -

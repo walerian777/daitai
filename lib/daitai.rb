@@ -17,6 +17,8 @@ module Daitai
   extend Last
   extend Length
   extend Map
+  extend Max
+  extend Min
   extend Modulo
   extend Multiply
   extend Negate
