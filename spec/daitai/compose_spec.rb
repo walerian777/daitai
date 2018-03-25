@@ -3,7 +3,7 @@
 RSpec.describe Daitai::Compose do
   before do
     @add_two = ->(x) { x + 2 }
-    @square   = ->(x) { x * x }
+    @square  = ->(x) { x * x }
   end
 
   it 'composes functions from right to left' do
