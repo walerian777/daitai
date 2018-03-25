@@ -30,6 +30,8 @@ module Daitai
   extend Reverse
   extend Signum
   extend Sort
+  extend SortBy
+  extend SortWith
   extend Subtract
   extend Sum
   extend Tail

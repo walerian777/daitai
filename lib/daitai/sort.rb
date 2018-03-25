@@ -3,9 +3,7 @@
 module Daitai
   module Sort
     def sort
-      lambda do |comparator, list|
-        list.sort(&comparator)
-      end.curry
+      ->(sortable) { sortable.sort }
     end
   end
 end
