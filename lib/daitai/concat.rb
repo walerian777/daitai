@@ -3,7 +3,9 @@
 module Daitai
   module Concat
     def concat
-      ->(x, y) { x + y }.curry
+      lambda do |x, y|
+        x + y
+      end.curry
     end
   end
 end

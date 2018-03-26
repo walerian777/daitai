@@ -3,7 +3,9 @@
 module Daitai
   module Min
     def min
-      ->(a, b) { a < b ? a : b }.curry
+      lambda do |a, b|
+        a < b ? a : b
+      end.curry
     end
   end
 end

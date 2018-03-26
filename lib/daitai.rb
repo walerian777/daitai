@@ -35,4 +35,5 @@ module Daitai
   extend Subtract
   extend Sum
   extend Tail
+  extend Xor
 end

@@ -11,6 +11,7 @@ RSpec.describe Daitai::All do
 
   it 'returns true when the list is empty' do
     noop = -> {}
+
     expect(Daitai.all.(noop, [])).to eql(true)
   end
 

@@ -7,6 +7,8 @@ RSpec.describe Daitai::And do
 
   it 'returns false when at least one of the arguments is false' do
     expect(Daitai.and.(true, false)).to eql(false)
+    expect(Daitai.and.(false, true)).to eql(false)
+    expect(Daitai.and.(false, false)).to eql(false)
   end
 
   it 'is curried' do
