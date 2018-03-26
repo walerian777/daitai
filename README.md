@@ -63,6 +63,7 @@ $ gem install daitai
 * [subtract](#subtract-definition)
 * [sum](#sum-definition)
 * [tail](#tail-definition)
+* [xor](#xor-definition)
 
 - - -
 
@@ -512,6 +513,21 @@ Returns all the elements of a list except the first one.
 ```ruby
 Daitai.tail.([1, 2, 3, 4]) # => [2, 3, 4]
 Daitai.tail.("Ruby") # => "uby"
+```
+
+- - -
+
+<h4 id='xor-definition'>
+  <code>xor :: Bool -> Bool -> Bool</code>
+</h4>
+
+Boolean `xor` - returns `true` if only one of the arguments is true. Otherwise returs `false`.
+
+```ruby
+Daitai.xor.(true, true)   # => false
+Daitai.xor.(true, false)  # => true
+Daitai.xor.(false, true)  # => true
+Daitai.xor.(false, false) # => false
 ```
 
 - - -
