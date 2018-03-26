@@ -7,6 +7,7 @@ RSpec.describe Daitai::Divide do
 
   it 'is curried' do
     divide18 = Daitai.divide.(18)
+
     expect(divide18.(3)).to eql(6)
   end
 end

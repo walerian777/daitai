@@ -7,6 +7,7 @@ RSpec.describe Daitai::Subtract do
 
   it 'is curried' do
     eight_minus = Daitai.subtract.(8)
+
     expect(eight_minus.(1)).to eql(7)
   end
 end

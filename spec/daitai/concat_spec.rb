@@ -1,58 +1,36 @@
 # frozen_string_literal: true
 
 RSpec.describe Daitai::Concat do
-  context 'for String arguments' do
-    before do
-      @beginning = 'Szcz'
-      @ending = 'ecin'
-    end
-
-    it 'concatenates two strings' do
-      expect(Daitai.concat.(@beginning, @ending)).to eql('Szczecin')
-    end
-
-    it 'returns an empty string for empty strings' do
-      expect(Daitai.concat.('', '')).to eql('')
-    end
-
-    it 'does not mutate the first argument' do
-      expect do
-        Daitai.concat.(@beginning, @ending)
-      end.not_to(change { @beginning })
-    end
-
-    it 'does not mutate the second argument' do
-      expect do
-        Daitai.concat.(@beginning, @ending)
-      end.not_to(change { @ending })
-    end
+  it 'concatenates two strings' do
+    expect(Daitai.concat.('Szcz', 'ecin')).to eql('Szczecin')
   end
 
-  context 'for Array arguments' do
-    before do
-      @beginning = [1, 2]
-      @ending = [3, 4]
-    end
+  it 'returns an empty string for empty strings' do
+    expect(Daitai.concat.('', '')).to eql('')
+  end
 
-    it 'concatenates two arrays' do
-      expect(Daitai.concat.(@beginning, @ending)).to eql([1, 2, 3, 4])
-    end
+  it 'does not mutate the String arguments' do
+    prefix = 'Szcz'
+    suffix = 'ecin'
 
-    it 'returns an empty array for empty arrays' do
-      expect(Daitai.concat.([], [])).to eql([])
-    end
+    expect { Daitai.concat.(prefix, suffix) }.not_to(change { prefix })
+    expect { Daitai.concat.(prefix, suffix) }.not_to(change { suffix })
+  end
 
-    it 'does not mutate the first argument' do
-      expect do
-        Daitai.concat.(@beginning, @ending)
-      end.not_to(change { @beginning })
-    end
+  it 'concatenates two arrays' do
+    expect(Daitai.concat.([1, 2], [3, 4])).to eql([1, 2, 3, 4])
+  end
 
-    it 'does not mutate the first argument' do
-      expect do
-        Daitai.concat.(@beginning, @ending)
-      end.not_to(change { @ending })
-    end
+  it 'returns an empty array for empty arrays' do
+    expect(Daitai.concat.([], [])).to eql([])
+  end
+
+  it 'does not mutate the Array arguments' do
+    head = [1, 2]
+    tail = [3, 4]
+
+    expect { Daitai.concat.(head, tail) }.not_to(change { head })
+    expect { Daitai.concat.(head, tail) }.not_to(change { tail })
   end
 
   it 'is curried' do

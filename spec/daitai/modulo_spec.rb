@@ -7,6 +7,7 @@ RSpec.describe Daitai::Modulo do
 
   it 'is curried' do
     modulo18 = Daitai.modulo.(18)
+
     expect(modulo18.(4)).to eql(2)
   end
 end

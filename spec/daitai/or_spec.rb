@@ -10,7 +10,8 @@ RSpec.describe Daitai::Or do
   end
 
   it 'is curried' do
-    true_or_x = Daitai.or.(true)
-    expect(true_or_x.(false)).to eql(true)
+    true_or = Daitai.or.(true)
+
+    expect(true_or.(false)).to eql(true)
   end
 end

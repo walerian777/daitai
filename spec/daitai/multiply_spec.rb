@@ -7,6 +7,7 @@ RSpec.describe Daitai::Multiply do
 
   it 'is curried' do
     triple = Daitai.multiply.(3)
+
     expect(triple.(6)).to eql(18)
   end
 

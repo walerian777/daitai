@@ -10,7 +10,8 @@ RSpec.describe Daitai::And do
   end
 
   it 'is curried' do
-    true_and_x = Daitai.and.(true)
-    expect(true_and_x.(true)).to eql(true)
+    true_and = Daitai.and.(true)
+
+    expect(true_and.(true)).to eql(true)
   end
 end
