@@ -14,19 +14,19 @@ Daitai (代替, Japanese for "alternative") is a functional library for Ruby lan
 
 Add this line to your application's Gemfile:
 
-```ruby
+```bash
 gem 'daitai'
 ```
 
 And then execute:
 
-```
+```bash
 $ bundle
 ```
 
 Or install it yourself as:
 
-```
+```bash
 $ gem install daitai
 ```
 
@@ -58,6 +58,8 @@ $ gem install daitai
 * [reverse](#reverse-definition)
 * [signum](#signum-definition)
 * [sort](#sort-definition)
+* [sort_by](#sort_by-definition)
+* [sort_with](#sort_with-definition)
 * [subtract](#subtract-definition)
 * [sum](#sum-definition)
 * [tail](#tail-definition)
@@ -426,7 +428,38 @@ Daitai.signum.(-8) # => -1
 - - -
 
 <h4 id='sort-definition'>
-  <code>sort :: (a -> a -> Numeric) -> [a] -> [a]</code>
+  <code>sort :: [a] -> [a]</code>
+</h4>
+
+Returns a copy of the list sorted in the ascending order.
+
+```ruby
+Daitai.sort.(diff, [2, 1, 4, 3]) # => [1, 2, 3, 4]
+Daitai.sort.(%w[haskell ruby elixir]) # => ["elixir", "haskell", "ruby"]
+```
+
+- - -
+
+<h4 id='sort_by-definition'>
+  <code>sort_by :: a -> [a] -> [a]</code>
+</h4>
+
+Returns a copy of the list sorted by the provided property - either a key of a `Hash` or a name of an `Object`'s function.
+
+```ruby
+apple  = { colour: 'red',    weight: 136 }
+banana = { colour: 'yellow', weight: 118 }
+pear   = { colour: 'green',  weight: 178 }
+Daitai.sort_by.(:weight, [apple, banana, pear]) # => [banana, apple, pear]
+
+sort_by_length = Daitai.sort_by.(:length)
+sort_by_length.(%w[haskell ruby elixir] # => ["ruby", "elixir", "haskell"]
+```
+
+- - -
+
+<h4 id='sort_with-definition'>
+  <code>sort_with :: (a -> a -> Numeric) -> [a] -> [a]</code>
 </h4>
 
 Returns a sorted copy of the list according to the specified comparator function.
