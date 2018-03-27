@@ -40,6 +40,7 @@ $ gem install daitai
 * [concat](#concat-definition)
 * [divide](#divide-definition)
 * [filter](#filter-definition)
+* [flip](#flip-definition)
 * [head](#head-definition)
 * [init](#init-definition)
 * [last](#last-definition)
@@ -188,6 +189,20 @@ Daitai.filter.(greater_than_two, x: 2, y: 3, z: 5) # => { y: 3, z: 5 }
 
 only_even = Daitai.filter.(->(x) { x % 2 == 0 })
 only_even.([1, 2, 3, 4]) # => [2, 4]
+```
+
+- - -
+
+<h4 id='flip-definition'>
+  <code>flip :: (a -> b -> c) -> b -> a -> c</code>
+</h4>
+
+Returns a copy of a function with reversed order of the first two arguments.
+
+```ruby
+concat = ->(x, y) { x + y }
+flipped_concat = Daitai.flip.(concat)
+flipped_concat.("flip", "flop") # => "flopflip"
 ```
 
 - - -

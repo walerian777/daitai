@@ -12,6 +12,7 @@ module Daitai
   extend Concat
   extend Divide
   extend Filter
+  extend Flip
   extend Head
   extend Init
   extend Last
