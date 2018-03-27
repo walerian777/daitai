@@ -15,6 +15,7 @@ module Daitai
   extend Filter
   extend Flip
   extend Head
+  extend Identity
   extend Init
   extend Last
   extend Length

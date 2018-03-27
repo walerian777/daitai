@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.describe Daitai::Head do
+RSpec.describe Daitai::Init do
   it 'returns all the elements of a list except the last one' do
     expect(Daitai.init.([1, 2, 3, 4])).to eql([1, 2, 3])
   end

@@ -43,6 +43,7 @@ $ gem install daitai
 * [filter](#filter-definition)
 * [flip](#flip-definition)
 * [head](#head-definition)
+* [identity](#identity-definition)
 * [init](#init-definition)
 * [last](#last-definition)
 * [length](#length-definition)
@@ -232,6 +233,19 @@ Returns the first element of a list.
 ```ruby
 Daitai.head.([1, 2, 3, 4]) # => 1
 Daitai.head.("Ruby") # => "R"
+```
+
+- - -
+
+<h4 id='identity-definition'>
+  <code>identity :: a -> a</code>
+</h4>
+
+Returns exactly the provided value.
+
+```ruby
+Daitai.identity.(1) # => 1
+Daitai.identity.("Ruby") # => "Ruby"
 ```
 
 - - -
