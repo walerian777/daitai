@@ -34,6 +34,7 @@ $ gem install daitai
 * [abs](#abs-definition)
 * [add](#add-definition)
 * [all](#all-definition)
+* [always](#always-definition)
 * [and](#and-definition)
 * [any](#any-definition)
 * [compose](#compose-definition)
@@ -103,6 +104,21 @@ Checks if all elements of the list satisfy the predicate.
 even = ->(x) { x % 2 == 0 }
 Daitai.all.(even, [2, 4, 6, 8]) # => true
 Daitai.all.(even, [2, 4, 7, 8]) # => false
+```
+
+- - -
+
+<h4 id='always-definition'>
+  <code>always :: a -> b -> a</code>
+</h4>
+
+Creates a function that always returns the provided value.
+
+```ruby
+always_zero = Daitai.always.(0)
+always_zero.(:one) # => 0
+always_zero.(7, 8) # => 0
+Daitai.map.(always_zero, [1, 2, 3, 4]) # => [0, 0, 0, 0]
 ```
 
 - - -
@@ -194,7 +210,7 @@ only_even.([1, 2, 3, 4]) # => [2, 4]
 - - -
 
 <h4 id='flip-definition'>
-  <code>flip :: (a -> b -> c) -> b -> a -> c</code>
+  <code>flip :: (a -> b -> … -> c) -> b -> a -> … -> c</code>
 </h4>
 
 Returns a copy of a function with reversed order of the first two arguments.

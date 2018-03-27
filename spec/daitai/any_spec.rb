@@ -1,9 +1,6 @@
 # frozen_string_literal: true
 
 RSpec.describe Daitai::Any do
-  before do
-  end
-
   it 'returns true when at least one element of the list satisfies the predicate' do
     expect(Daitai.any.(:even?, [1, 3, 5, 6])).to eql(true)
   end

@@ -6,6 +6,7 @@ module Daitai
   extend Abs
   extend Add
   extend All
+  extend Always
   extend And
   extend Any
   extend Compose
