@@ -11,11 +11,13 @@ module Daitai
   extend Any
   extend Compose
   extend Concat
+  extend Dec
   extend Divide
   extend Filter
   extend Flip
   extend Head
   extend Identity
+  extend Inc
   extend Init
   extend Last
   extend Length

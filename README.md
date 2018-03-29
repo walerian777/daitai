@@ -39,11 +39,13 @@ $ gem install daitai
 * [any](#any-definition)
 * [compose](#compose-definition)
 * [concat](#concat-definition)
+* [dec](#dec-definition)
 * [divide](#divide-definition)
 * [filter](#filter-definition)
 * [flip](#flip-definition)
 * [head](#head-definition)
 * [identity](#identity-definition)
+* [inc](#inc-definition)
 * [init](#init-definition)
 * [last](#last-definition)
 * [length](#length-definition)
@@ -181,6 +183,18 @@ Daitai.concat.("Szcz", "ecin") # => "Szczecin"
 
 - - -
 
+<h4 id='dec-definition'>
+  <code>dec :: Numeric -> Numeric</code>
+</h4>
+
+Returns the decremented value of a provided number.
+
+```ruby
+Daitai.dec.(7) # => 6
+```
+
+- - -
+
 <h4 id='divide-definition'>
   <code>divide :: a -> a -> a</code>
 </h4>
@@ -246,6 +260,18 @@ Returns exactly the provided value.
 ```ruby
 Daitai.identity.(1) # => 1
 Daitai.identity.("Ruby") # => "Ruby"
+```
+
+- - -
+
+<h4 id='inc-definition'>
+  <code>inc :: Numeric -> Numeric</code>
+</h4>
+
+Returns the incremented value of a provided number.
+
+```ruby
+Daitai.inc.(7) # => 8
 ```
 
 - - -
