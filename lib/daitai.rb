@@ -23,6 +23,8 @@ module Daitai
   extend Length
   extend Map
   extend Max
+  extend Mean
+  extend Median
   extend Min
   extend Modulo
   extend Multiply

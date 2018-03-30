@@ -3,7 +3,7 @@
 module Daitai
   module Dec
     def dec
-      Daitai.add.(-1)
+      add.(-1)
     end
   end
 end

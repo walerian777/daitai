@@ -51,6 +51,8 @@ $ gem install daitai
 * [length](#length-definition)
 * [map](#map-definition)
 * [max](#max-definition)
+* [mean](#mean-definition)
+* [median](#median-definition)
 * [min](#min-definition)
 * [modulo](#modulo-definition)
 * [multiply](#multiply-definition)
@@ -328,6 +330,34 @@ Daitai.map.(triple, a: 10, b: 13) # => { a: 30, b: 39 }
 
 increment = Daitai.map.(->(x) { x + 1 })
 increment.([1, 2, 3, 4]) # => [2, 3, 4, 5]
+```
+
+- - -
+
+<h4 id='mean-definition'>
+  <code>mean :: [Numeric] -> Float</code>
+</h4>
+
+Returns the mean of a list.
+
+```ruby
+Daitai.mean.([3, 4.5, 9]) # => 5.5
+Daitai.mean.([6, 7]) # => 6.5
+Daitai.mean.([]) # => NaN
+```
+
+- - -
+
+<h4 id='median-definition'>
+  <code>median :: [Numeric] -> Float</code>
+</h4>
+
+Returns the median of a list.
+
+```ruby
+Daitai.median.([3.14, 4.5, 7.77]) # => 4.5
+Daitai.median.([6, 7]) # => 6.5
+Daitai.median.([]) # => NaN
 ```
 
 - - -
