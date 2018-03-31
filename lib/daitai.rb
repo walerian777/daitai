@@ -19,6 +19,8 @@ module Daitai
   extend Identity
   extend Inc
   extend Init
+  extend Is
+  extend IsNil
   extend Last
   extend Length
   extend Map
