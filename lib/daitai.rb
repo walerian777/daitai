@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
-Dir["#{__dir__}/daitai/*"].each { |file| require file }
+require 'daitai/version'
+
+Dir["#{__dir__}/daitai/functions/*"].each { |file| require file }
 
 module Daitai
   extend Abs
