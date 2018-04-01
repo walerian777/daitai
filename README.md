@@ -47,6 +47,8 @@ $ gem install daitai
 * [identity](#identity-definition)
 * [inc](#inc-definition)
 * [init](#init-definition)
+* [is](#is-definition)
+* [is_nil](#is_nil-definition)
 * [last](#last-definition)
 * [length](#length-definition)
 * [map](#map-definition)
@@ -287,6 +289,40 @@ Returns all the elements of a list except the last one.
 ```ruby
 Daitai.init.([1, 2, 3, 4]) # => [1, 2, 3]
 Daitai.init.("Ruby") # => "Rub"
+```
+
+- - -
+
+<h4 id='is-definition'>
+  <code>is :: Constant -> a -> Bool</code>
+</h4>
+
+Checks if an argument is an instance of the provided type.
+
+```ruby
+Daitai.is.(Numeric, 7.77) # => true
+Daitai.is.(Float, 7.77) # => true
+Daitai.is.(String, "Ruby") # => true
+Daitai.is.(Regexp, /hello/) # => true
+
+Daitai.is.(Hash, {}) # => true
+Daitai.is.(Enumerable, {}) # => true
+Daitai.is.(Object, {}) # => true
+Daitai.is.(Numeric, {}) # => false
+```
+
+- - -
+
+<h4 id='is_nil-definition'>
+  <code>is_nil :: a -> Bool</code>
+</h4>
+
+Checks if an argument is a `nil`.
+
+```ruby
+Daitai.is_nil.(nil) # => true
+Daitai.is_nil.(false) # => false
+Daitai.is_nil.(0) # => false
 ```
 
 - - -
