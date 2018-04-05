@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'daitai/version'
+require 'daitai/lambda'
 
 Dir["#{__dir__}/daitai/functions/*"].each { |file| require file }
 
