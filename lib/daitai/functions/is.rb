@@ -3,7 +3,9 @@
 module Daitai
   module Is
     def is
-      ->(type, value) { value.is_a?(type) }.curry
+      Lambda.new do |type, value|
+        value.is_a?(type)
+      end.curry
     end
   end
 end

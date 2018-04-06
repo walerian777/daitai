@@ -3,7 +3,9 @@
 module Daitai
   module Last
     def last
-      ->(list) { list[-1] }
+      Lambda.new do |list|
+        list[-1]
+      end
     end
   end
 end

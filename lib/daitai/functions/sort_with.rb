@@ -3,7 +3,7 @@
 module Daitai
   module SortWith
     def sort_with
-      lambda do |comparator, sortable|
+      Lambda.new do |comparator, sortable|
         sortable.sort(&comparator)
       end.curry
     end

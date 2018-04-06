@@ -3,7 +3,7 @@
 module Daitai
   module Filter
     def filter
-      lambda do |predicate, filterable|
+      Lambda.new do |predicate, filterable|
         case filterable
         when Hash then hash_filter(predicate, filterable)
         else default_filter(predicate, filterable)

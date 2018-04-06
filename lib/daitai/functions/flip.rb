@@ -3,13 +3,15 @@
 module Daitai
   module Flip
     def flip
-      ->(function) { flip_arguments(function) }
+      Lambda.new do |function|
+        flip_arguments(function)
+      end
     end
 
     private
 
     def flip_arguments(function)
-      lambda do |first, second, *tail|
+      Lambda.new do |first, second, *tail|
         function.curry.(second, first, *tail)
       end.curry
     end

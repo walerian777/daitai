@@ -3,7 +3,7 @@
 module Daitai
   module Sort
     def sort
-      ->(sortable) { sortable.sort }
+      Lambda.new(&:sort)
     end
   end
 end

@@ -3,7 +3,7 @@
 module Daitai
   module SortBy
     def sort_by
-      lambda do |property, sortable|
+      Lambda.new do |property, sortable|
         comparator = sort_elements(property)
         sortable.sort_by(&comparator)
       end.curry
@@ -12,7 +12,7 @@ module Daitai
     private
 
     def sort_elements(property)
-      lambda do |object|
+      Lambda.new do |object|
         case object
         when Hash then object[property]
         else object.send(property)

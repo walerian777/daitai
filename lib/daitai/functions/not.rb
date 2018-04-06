@@ -3,7 +3,7 @@
 module Daitai
   module Not
     def not
-      ->(a) { !a }
+      Lambda.new(&:!)
     end
   end
 end

@@ -3,9 +3,17 @@
 module Daitai
   module Compose
     def compose
-      lambda do |f, g|
-        ->(*args) { f.(g.(*args)) }
+      Lambda.new do |f, g|
+        compose_lambda(f, g)
       end.curry
+    end
+
+    private
+
+    def compose_lambda(f, g)
+      Lambda.new do |*args|
+        f.(g.(*args))
+      end
     end
   end
 end

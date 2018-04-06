@@ -3,7 +3,9 @@
 module Daitai
   module Signum
     def signum
-      ->(x) { x <=> 0 }
+      Lambda.new do |x|
+        x <=> 0
+      end
     end
   end
 end

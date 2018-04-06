@@ -3,7 +3,7 @@
 module Daitai
   module Concat
     def concat
-      lambda do |x, y|
+      Lambda.new do |x, y|
         x + y
       end.curry
     end
