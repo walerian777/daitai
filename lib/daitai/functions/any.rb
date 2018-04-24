@@ -3,7 +3,7 @@
 module Daitai
   module Any
     def any
-      Lambda.new do |predicate, list|
+      lambda do |predicate, list|
         list.any?(&predicate)
       end.curry
     end

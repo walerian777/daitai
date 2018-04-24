@@ -3,7 +3,7 @@
 module Daitai
   module Map
     def map
-      Lambda.new do |fn, functor|
+      lambda do |fn, functor|
         case functor
         when Proc then proc_map(fn, functor)
         when Hash then hash_map(fn, functor)
@@ -15,9 +15,7 @@ module Daitai
     private
 
     def proc_map(fn, functor)
-      Lambda.new do |*args|
-        fn.(*functor.(*args))
-      end
+      ->(*args) { fn.(*functor.(*args)) }
     end
 
     def hash_map(fn, functor)

@@ -3,7 +3,7 @@
 module Daitai
   module Length
     def length
-      Lambda.new(&:length)
+      ->(list) { list.length }
     end
   end
 end

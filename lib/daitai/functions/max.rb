@@ -3,9 +3,7 @@
 module Daitai
   module Max
     def max
-      Lambda.new do |a, b|
-        a > b ? a : b
-      end.curry
+      ->(a, b) { a > b ? a : b }.curry
     end
   end
 end

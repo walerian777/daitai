@@ -3,7 +3,7 @@
 module Daitai
   module Subtract
     def subtract
-      Lambda.new do |minuend, subtrahend|
+      lambda do |minuend, subtrahend|
         minuend - subtrahend
       end.curry
     end

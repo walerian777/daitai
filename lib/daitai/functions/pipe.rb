@@ -3,17 +3,9 @@
 module Daitai
   module Pipe
     def pipe
-      Lambda.new do |f, g|
-        pipe_lambda(f, g)
+      lambda do |f, g|
+        ->(*args) { g.(f.(*args)) }
       end.curry
-    end
-
-    private
-
-    def pipe_lambda(f, g)
-      Lambda.new do |*args|
-        g.(f.(*args))
-      end
     end
   end
 end

@@ -3,7 +3,7 @@
 module Daitai
   module Reduce
     def reduce
-      Lambda.new do |fn, acc, list|
+      lambda do |fn, acc, list|
         list.reduce(acc, &fn)
       end.curry
     end

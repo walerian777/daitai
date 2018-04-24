@@ -3,7 +3,7 @@
 module Daitai
   module Add
     def add
-      Lambda.new do |augend, addend|
+      lambda do |augend, addend|
         augend + addend
       end.curry
     end

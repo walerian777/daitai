@@ -3,9 +3,7 @@
 module Daitai
   module Tail
     def tail
-      Lambda.new do |list|
-        list[1..-1]
-      end
+      ->(list) { list[1..-1] }
     end
   end
 end

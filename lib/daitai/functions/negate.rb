@@ -3,7 +3,7 @@
 module Daitai
   module Negate
     def negate
-      Lambda.new(&:-@)
+      ->(x) { -x }
     end
   end
 end

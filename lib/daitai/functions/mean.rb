@@ -3,9 +3,7 @@
 module Daitai
   module Mean
     def mean
-      Lambda.new do |list|
-        sum.(list).to_f / length.(list)
-      end
+      ->(list) { sum.(list).to_f / length.(list) }
     end
   end
 end

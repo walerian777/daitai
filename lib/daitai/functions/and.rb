@@ -3,7 +3,7 @@
 module Daitai
   module And
     def and
-      Lambda.new do |a, b|
+      lambda do |a, b|
         a && b
       end.curry
     end

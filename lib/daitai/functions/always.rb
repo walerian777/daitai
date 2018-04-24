@@ -3,7 +3,7 @@
 module Daitai
   module Always
     def always
-      Lambda.new do |value|
+      lambda do |value|
         ->(*) { value }
       end
     end

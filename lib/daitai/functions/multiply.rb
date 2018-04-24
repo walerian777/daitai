@@ -3,7 +3,7 @@
 module Daitai
   module Multiply
     def multiply
-      Lambda.new do |multiplier, multiplicand|
+      lambda do |multiplier, multiplicand|
         multiplier * multiplicand
       end.curry
     end

@@ -3,7 +3,7 @@
 module Daitai
   module Xor
     def xor
-      Lambda.new do |a, b|
+      lambda do |a, b|
         a ^ b
       end.curry
     end

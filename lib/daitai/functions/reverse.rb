@@ -3,7 +3,7 @@
 module Daitai
   module Reverse
     def reverse
-      Lambda.new(&:reverse)
+      ->(list) { list.reverse }
     end
   end
 end

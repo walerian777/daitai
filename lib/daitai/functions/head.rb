@@ -3,9 +3,7 @@
 module Daitai
   module Head
     def head
-      Lambda.new do |list|
-        list[0]
-      end
+      ->(list) { list[0] }
     end
   end
 end

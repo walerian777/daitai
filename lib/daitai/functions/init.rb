@@ -3,9 +3,7 @@
 module Daitai
   module Init
     def init
-      Lambda.new do |list|
-        list[0..-2]
-      end
+      ->(list) { list[0..-2] }
     end
   end
 end

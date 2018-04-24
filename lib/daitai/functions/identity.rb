@@ -3,9 +3,7 @@
 module Daitai
   module Identity
     def identity
-      Lambda.new do |value|
-        value
-      end
+      ->(value) { value }
     end
   end
 end

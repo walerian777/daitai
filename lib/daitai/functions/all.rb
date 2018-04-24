@@ -3,7 +3,7 @@
 module Daitai
   module All
     def all
-      Lambda.new do |predicate, list|
+      lambda do |predicate, list|
         list.all?(&predicate)
       end.curry
     end

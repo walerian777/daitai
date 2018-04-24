@@ -3,7 +3,7 @@
 module Daitai
   module Divide
     def divide
-      Lambda.new do |dividend, divisor|
+      lambda do |dividend, divisor|
         dividend / divisor
       end.curry
     end
