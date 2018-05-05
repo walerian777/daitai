@@ -34,6 +34,7 @@ module Daitai
   extend Multiply
   extend Negate
   extend Not
+  extend Once
   extend Or
   extend Pipe
   extend Product

@@ -60,6 +60,7 @@ $ gem install daitai
 * [multiply](#multiply-definition)
 * [negate](#negate-definition)
 * [not](#not-definition)
+* [once](#once-definition)
 * [or](#or-definition)
 * [pipe](#pipe-definition)
 * [product](#product-definition)
@@ -478,6 +479,23 @@ Daitai.not.(true)  # => false
 Daitai.not.(false) # => true
 Daitai.not.('λ')   # => false
 Daitai.not.(nil)   # => true
+```
+
+- - -
+
+<h4 id='once-definition'>
+  <code>once :: (a -> … -> b) -> (a -> … -> b)</code>
+</h4>
+
+Returns a wrapped function which can be executed only once - no matter how many times it is called.
+
+```ruby
+decrement = ->(x) { x - 1 }
+decrement_once = Daitai.once.(decrement)
+
+decrement_once.(8) # => 7
+decrement_once.(40) # => 7
+decrement_once.(decrement_once.(40)) # => 7
 ```
 
 - - -
