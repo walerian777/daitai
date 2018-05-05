@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    daitai (0.1.9)
+    daitai (0.1.10)
 
 GEM
   remote: https://rubygems.org/
