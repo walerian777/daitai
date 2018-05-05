@@ -11,6 +11,7 @@ module Daitai
   extend Always
   extend And
   extend Any
+  extend Comparator
   extend Compose
   extend Concat
   extend Dec

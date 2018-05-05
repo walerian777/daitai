@@ -37,6 +37,7 @@ $ gem install daitai
 * [always](#always-definition)
 * [and](#and-definition)
 * [any](#any-definition)
+* [comparator](#comparator-definition)
 * [compose](#compose-definition)
 * [concat](#concat-definition)
 * [dec](#dec-definition)
@@ -156,6 +157,25 @@ Checks if at least one element of the list satisfies the predicate.
 even = ->(x) { x % 2 == 0 }
 Daitai.any.(even, [1, 2, 3, 5]) # => true
 Daitai.any.(even, [1, 3, 5, 7]) # => false
+```
+
+- - -
+
+<h4 id='comparator-definition'>
+  <code>comparator :: (a -> b -> Boolean) -> (a -> b -> Numeric)</code>
+</h4>
+
+Creates a comparator function based on a function which checks if the first argument is greater than the second one.
+
+```ruby
+apple  = { colour: 'red',    weight: 136 }
+banana = { colour: 'yellow', weight: 118 }
+pear   = { colour: 'green',  weight: 178 }
+
+weight_comparator = Daitai.comparator.(->(a, b) { a[:weight] > b[:weight]})
+by_weight_decreasingly = Daitai.sort_with.(weight_comparator)
+
+by_weight_decreasingly.([apple, banana, pear]) # => [pear, apple, banana]
 ```
 
 - - -
