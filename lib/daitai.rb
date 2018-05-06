@@ -48,5 +48,6 @@ module Daitai
   extend Subtract
   extend Sum
   extend Tail
+  extend Tap
   extend Xor
 end

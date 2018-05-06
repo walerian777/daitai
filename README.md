@@ -74,6 +74,7 @@ $ gem install daitai
 * [subtract](#subtract-definition)
 * [sum](#sum-definition)
 * [tail](#tail-definition)
+* [tap](#tap-definition)
 * [xor](#xor-definition)
 
 - - -
@@ -688,6 +689,21 @@ Returns all the elements of a list except the first one.
 ```ruby
 Daitai.tail.([1, 2, 3, 4]) # => [2, 3, 4]
 Daitai.tail.("Ruby") # => "uby"
+```
+
+- - -
+
+<h4 id='tap-definition'>
+  <code>tap :: (a -> b) -> a -> a</code>
+</h4>
+
+Executes the given function with the provided argument, then returns the argument.
+
+```ruby
+logger = ->(x) { puts "the value is #{x}" }
+Daitai.tap.(logger, 7)
+# the value is 7
+# => 7
 ```
 
 - - -
