@@ -17,6 +17,7 @@ module Daitai
   extend Cond
   extend Dec
   extend Divide
+  extend Equals
   extend Filter
   extend Flip
   extend Head

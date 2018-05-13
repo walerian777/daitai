@@ -43,6 +43,7 @@ $ gem install daitai
 * [cond](#cond-definition)
 * [dec](#dec-definition)
 * [divide](#divide-definition)
+* [equals](#equals-definition)
 * [filter](#filter-definition)
 * [flip](#flip-definition)
 * [head](#head-definition)
@@ -250,6 +251,20 @@ Calculates the quotient of two arguments.
 
 ```ruby
 Daitai.divide.(18, 6) # => 3
+```
+
+- - -
+
+<h4 id='equals-definition'>
+  <code>equals :: a -> b -> Bool</code>
+</h4>
+
+Returns `true` if both arguments are equal. Otherwise returns `false`.
+
+```ruby
+Daitai.equals.(7, 7) # => true
+Daitai.equals.('7', 7) # => false
+Daitai.equals.(%w[a b c], %w[a b c]) # => true
 ```
 
 - - -
