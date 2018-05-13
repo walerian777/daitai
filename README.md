@@ -40,6 +40,7 @@ $ gem install daitai
 * [comparator](#comparator-definition)
 * [compose](#compose-definition)
 * [concat](#concat-definition)
+* [cond](#cond-definition)
 * [dec](#dec-definition)
 * [divide](#divide-definition)
 * [filter](#filter-definition)
@@ -205,6 +206,26 @@ Returns the result of concatenating provided lists or strings.
 ```ruby
 Daitai.concat.([1, 2], [3, 4]) # => [1, 2, 3, 4]
 Daitai.concat.("Szcz", "ecin") # => "Szczecin"
+```
+
+- - -
+
+<h4 id='cond-definition'>
+  <code>cond :: [[(*… → Boolean), (*… → *)]] → (*… → *)</code>
+</h4>
+
+Takes a list of pairs consisted of a predicate and a transformer and returns a function which finds the first passing predicate and evaluates the corresponding transformer. Returns a `nil` if there is no matching predicate.
+
+```ruby
+function = Daitai.cond.(
+  [Daitai.is.(String), Daitai.always.("It's a String!")],
+  [Daitai.is.(Symbol), Daitai.always.("It's a Symbol!")],
+  [Daitai.always.(true), ->(unknown) { "I don't know what #{unknown} is."}]
+)
+
+function.("いただきます") # => "It's a String!"
+function.(:env) # => "It's a Symbol!"
+function.(3.14) # => "I don't know what 3.14 is."
 ```
 
 - - -

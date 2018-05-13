@@ -14,6 +14,7 @@ module Daitai
   extend Comparator
   extend Compose
   extend Concat
+  extend Cond
   extend Dec
   extend Divide
   extend Filter
