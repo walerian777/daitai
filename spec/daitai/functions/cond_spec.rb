@@ -32,11 +32,11 @@ RSpec.describe Daitai::Cond do
 
   it 'checks predicates in order' do
     function = Daitai.cond.(
-      [Daitai.is_nil, Daitai.always.('first')],
-      [Daitai.is_nil, Daitai.always.('second')],
-      [Daitai.is_nil, Daitai.always.('third')]
+      [Daitai.true, Daitai.always.('first')],
+      [Daitai.true, Daitai.always.('second')],
+      [Daitai.true, Daitai.always.('third')]
     )
 
-    expect(function.(nil)).to eql('first')
+    expect(function.()).to eql('first')
   end
 end

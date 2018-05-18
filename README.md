@@ -77,6 +77,7 @@ $ gem install daitai
 * [sum](#sum-definition)
 * [tail](#tail-definition)
 * [tap](#tap-definition)
+* [true](#true-definition)
 * [xor](#xor-definition)
 
 - - -
@@ -212,7 +213,7 @@ Daitai.concat.("Szcz", "ecin") # => "Szczecin"
 - - -
 
 <h4 id='cond-definition'>
-  <code>cond :: [[(*… → Boolean), (*… → *)]] → (*… → *)</code>
+  <code>cond :: [[(*… → Bool), (*… → *)]] → (*… → *)</code>
 </h4>
 
 Takes a list of pairs consisted of a predicate and a transformer and returns a function which finds the first passing predicate and evaluates the corresponding transformer. Returns a `nil` if there is no matching predicate.
@@ -221,7 +222,7 @@ Takes a list of pairs consisted of a predicate and a transformer and returns a f
 function = Daitai.cond.(
   [Daitai.is.(String), Daitai.always.("It's a String!")],
   [Daitai.is.(Symbol), Daitai.always.("It's a Symbol!")],
-  [Daitai.always.(true), ->(unknown) { "I don't know what #{unknown} is."}]
+  [Daitai.true, ->(unknown) { "I don't know what #{unknown} is."}]
 )
 
 function.("いただきます") # => "It's a String!"
@@ -740,6 +741,19 @@ logger = ->(x) { puts "the value is #{x}" }
 Daitai.tap.(logger, 7)
 # the value is 7
 # => 7
+```
+
+- - -
+
+<h4 id='true-definition'>
+  <code>true :: * → Bool</code>
+</h4>
+
+Returns a function that ignores all arguments and always returns `true`.
+
+```ruby
+Daitai.true.() # => true
+Daitai.true.(1, 2, 3) # => true
 ```
 
 - - -

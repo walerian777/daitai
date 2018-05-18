@@ -51,5 +51,6 @@ module Daitai
   extend Sum
   extend Tail
   extend Tap
+  extend True
   extend Xor
 end
