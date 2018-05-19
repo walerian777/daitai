@@ -44,6 +44,7 @@ $ gem install daitai
 * [dec](#dec-definition)
 * [divide](#divide-definition)
 * [equals](#equals-definition)
+* [false](#false-definition)
 * [filter](#filter-definition)
 * [flip](#flip-definition)
 * [head](#head-definition)
@@ -266,6 +267,19 @@ Returns `true` if both arguments are equal. Otherwise returns `false`.
 Daitai.equals.(7, 7) # => true
 Daitai.equals.('7', 7) # => false
 Daitai.equals.(%w[a b c], %w[a b c]) # => true
+```
+
+- - -
+
+<h4 id='false-definition'>
+  <code>false :: * -> Bool</code>
+</h4>
+
+Returns a function that ignores all arguments and always returns `false`.
+
+```ruby
+Daitai.false.() # => false
+Daitai.false.(1, 2, 3) # => false
 ```
 
 - - -
