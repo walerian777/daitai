@@ -21,6 +21,7 @@ module Daitai
   extend False
   extend Filter
   extend Flip
+  extend Gt
   extend Head
   extend Identity
   extend Inc

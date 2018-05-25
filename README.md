@@ -47,6 +47,7 @@ $ gem install daitai
 * [false](#false-definition)
 * [filter](#filter-definition)
 * [flip](#flip-definition)
+* [gt](#gt-definition)
 * [head](#head-definition)
 * [identity](#identity-definition)
 * [inc](#inc-definition)
@@ -311,6 +312,20 @@ Returns a copy of a function with reversed order of the first two arguments.
 concat = ->(x, y) { x + y }
 flipped_concat = Daitai.flip.(concat)
 flipped_concat.("flip", "flop") # => "flopflip"
+```
+
+- - -
+
+<h4 id='gt-definition'>
+  <code>a -> a -> Bool</code>
+</h4>
+
+Checks if the first argument is greater than the second one.
+
+```ruby
+Daitai.gt.(7, 5) # => true
+Daitai.gt.(40, 40) # => false
+Daitai.gt.(3.1, 3.14) # => false
 ```
 
 - - -
