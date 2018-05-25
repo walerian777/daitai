@@ -48,6 +48,7 @@ $ gem install daitai
 * [filter](#filter-definition)
 * [flip](#flip-definition)
 * [gt](#gt-definition)
+* [gte](#gte-definition)
 * [head](#head-definition)
 * [identity](#identity-definition)
 * [inc](#inc-definition)
@@ -326,6 +327,20 @@ Checks if the first argument is greater than the second one.
 Daitai.gt.(7, 5) # => true
 Daitai.gt.(40, 40) # => false
 Daitai.gt.(3.1, 3.14) # => false
+```
+
+- - -
+
+<h4 id='gte-definition'>
+  <code>a -> a -> Bool</code>
+</h4>
+
+Checks if the first argument is greater than or equal to the second one.
+
+```ruby
+Daitai.gte.(7, 5) # => true
+Daitai.gte.(40, 40) # => true
+Daitai.gte.(3.1, 3.14) # => false
 ```
 
 - - -
