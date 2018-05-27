@@ -31,6 +31,7 @@ module Daitai
   extend IsNil
   extend Last
   extend Length
+  extend Lt
   extend Map
   extend Max
   extend Mean

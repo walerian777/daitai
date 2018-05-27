@@ -57,6 +57,7 @@ $ gem install daitai
 * [is_nil](#is_nil-definition)
 * [last](#last-definition)
 * [length](#length-definition)
+* [lt](#lt-definition)
 * [map](#map-definition)
 * [max](#max-definition)
 * [mean](#mean-definition)
@@ -452,6 +453,20 @@ Returns the length of a list.
 ```ruby
 Daitai.length.([1, 2, 3, 4]) # => 4
 Daitai.length.("Ruby") # => 4
+```
+
+- - -
+
+<h4 id='lt-definition'>
+  <code>lt :: a -> a -> Bool</code>
+</h4>
+
+Checks if the first argument is less than the second one.
+
+```ruby
+Daitai.lt.(5, 7) # => true
+Daitai.lt.(40, 40) # => false
+Daitai.lt.(3.14, 3.1) # => false
 ```
 
 - - -
