@@ -58,6 +58,7 @@ $ gem install daitai
 * [last](#last-definition)
 * [length](#length-definition)
 * [lt](#lt-definition)
+* [lte](#lte-definition)
 * [map](#map-definition)
 * [max](#max-definition)
 * [mean](#mean-definition)
@@ -467,6 +468,20 @@ Checks if the first argument is less than the second one.
 Daitai.lt.(5, 7) # => true
 Daitai.lt.(40, 40) # => false
 Daitai.lt.(3.14, 3.1) # => false
+```
+
+- - -
+
+<h4 id='lte-definition'>
+  <code>lte :: a -> a -> Bool</code>
+</h4>
+
+Checks if the first argument is less than or equal to the second one.
+
+```ruby
+Daitai.lte.(5, 7) # => true
+Daitai.lte.(40, 40) # => true
+Daitai.lte.(3.14, 3.1) # => false
 ```
 
 - - -

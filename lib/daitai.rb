@@ -32,6 +32,7 @@ module Daitai
   extend Last
   extend Length
   extend Lt
+  extend Lte
   extend Map
   extend Max
   extend Mean
