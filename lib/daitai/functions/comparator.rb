@@ -12,7 +12,9 @@ module Daitai
 
     def evaluate_comparator(predicate, a, b)
       return -1 if predicate.(a, b)
+
       return 1 if predicate.(b, a)
+
       0
     end
   end
