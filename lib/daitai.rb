@@ -44,6 +44,7 @@ module Daitai
   extend Not
   extend Once
   extend Or
+  extend Partition
   extend Pipe
   extend Product
   extend Reduce

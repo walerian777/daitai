@@ -70,6 +70,7 @@ $ gem install daitai
 * [not](#not-definition)
 * [once](#once-definition)
 * [or](#or-definition)
+* [partition](#partition-definition)
 * [pipe](#pipe-definition)
 * [product](#product-definition)
 * [reduce](#reduce-definition)
@@ -643,6 +644,23 @@ Daitai.or.(true, true)   # => true
 Daitai.or.(true, false)  # => true
 Daitai.or.(false, true)  # => true
 Daitai.or.(false, false) # => false
+```
+
+- - -
+
+<h4 id='partition-definition'>
+  <code>partition :: (a -> Bool) -> [a] -> [[a], [a]]</code>
+</h4>
+
+Returns a pair of lists of elements that do and do not satisfy the predicate.
+
+```ruby
+greater_than_two = ->(x) { x > 2 }
+Daitai.partition.(greater_than_two, [1, 2, 3, 4]) # => [[3, 4], [1, 2]]
+Daitai.partition.(greater_than_two, x: 2, y: 3, z: 5) # => [{ y: 3, z: 5 }, { x: 2 }]
+
+partition_numbers = Daitai.partition.(->(x) { x % 2 == 0 })
+partition_numbers.([1, 2, 3, 4]) # => [[2, 4], [1, 3]]
 ```
 
 - - -
